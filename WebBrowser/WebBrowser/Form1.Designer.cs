@@ -36,8 +36,8 @@
             this.searchButton = new System.Windows.Forms.Button();
             this.webBrowserWindow = new System.Windows.Forms.WebBrowser();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.loadingProgressBar = new System.Windows.Forms.ToolStripProgressBar();
+            this.loadingStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -107,28 +107,30 @@
             this.webBrowserWindow.Name = "webBrowserWindow";
             this.webBrowserWindow.Size = new System.Drawing.Size(1014, 475);
             this.webBrowserWindow.TabIndex = 3;
+            this.webBrowserWindow.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowserWindow_DocumentCompleted);
+            this.webBrowserWindow.ProgressChanged += new System.Windows.Forms.WebBrowserProgressChangedEventHandler(this.webBrowserWindow_ProgressChanged);
             // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripProgressBar1,
-            this.toolStripStatusLabel1});
+            this.loadingProgressBar,
+            this.loadingStatus});
             this.statusStrip1.Location = new System.Drawing.Point(0, 533);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1014, 22);
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // toolStripProgressBar1
+            // loadingProgressBar
             // 
-            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
+            this.loadingProgressBar.Name = "loadingProgressBar";
+            this.loadingProgressBar.Size = new System.Drawing.Size(100, 16);
             // 
-            // toolStripStatusLabel1
+            // loadingStatus
             // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            this.loadingStatus.Name = "loadingStatus";
+            this.loadingStatus.Size = new System.Drawing.Size(39, 17);
+            this.loadingStatus.Text = "Status";
             // 
             // Form1
             // 
@@ -142,7 +144,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Superior WebBrowser v0.000001 ALPHA";
+            this.Text = "Superior WebBrowser";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
@@ -162,8 +164,8 @@
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.WebBrowser webBrowserWindow;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripProgressBar loadingProgressBar;
+        private System.Windows.Forms.ToolStripStatusLabel loadingStatus;
 
     }
 }
