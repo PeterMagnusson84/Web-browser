@@ -39,6 +39,7 @@ namespace WebBrowser
         {
             loadingStatus.Text = "Laddar sidan";
             webBrowserWindow.Navigate(searchBox.Text);
+            webBrowserWindow.ScriptErrorsSuppressed = true;
         }
 
         //Denna funktion kommer att köras varje gång en knapp trycks när man är i sökrutan.
