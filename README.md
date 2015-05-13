@@ -1,3 +1,3 @@
 Web browser
 ===========
-Windows forms application webbläsare.
+Windows forms application web browser.
